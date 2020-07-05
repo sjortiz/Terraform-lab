@@ -21,4 +21,5 @@ data "aws_ami" "amazon_linux" {
 resource "aws_instance" "server" {
     ami             = data.aws_ami.amazon_linux.id
     instance_type   = "t2.micro"
+    key_name        = var.ssh_key_pair_name
 }
